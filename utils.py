@@ -34,3 +34,31 @@ def search_books(books):
     for i, book in enumerate(found_books, 1):
         status = "Прочитана" if book["read"] else "Не прочитана"
         print(f"{i}. '{book['title']}' - {book['author']} ({status})")
+
+
+def update_read_status(books):
+    """Обновляем статус книги"""
+    print("\n--- Обновление статуса книги ---")
+
+    if not books:
+        print("В библиотеке нет книг")
+        return
+
+    show_all_books(books)
+
+    try:
+        book_num = int(input("\nВведите номер книги для обновления статуса: "))
+        if book_num < 1 or book_num > len(books):
+            print("Ошибка: Неверный номер книги")
+            return
+
+        book = books[book_num - 1]
+        book["read"] = not book["read"]
+
+        save_books(books)
+        status = "прочитана" if book["read"] else "не прочитана"
+        print(f"Статус книги '{book['title']}' изменен на '{status}'")
+
+
+    except ValueError:
+        print("Ошибка: Введите корректный номер")

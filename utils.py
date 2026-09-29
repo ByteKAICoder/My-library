@@ -74,3 +74,18 @@ def show_all_books(books):
             print('----------------------------------')
     else:
         print('\nСписок книг пуст.')
+
+
+def add_book(books):
+    """Добавляем книгу"""
+    title = input('\nВведите название книги: ')
+    author = input('Введите автора книги: ')
+
+    new_book = {
+        "title": title,
+        "author": author,
+        "read": False}
+
+    books.append(new_book)
+    save_books(books)
+    print(f'\nКнига "{title}" добавлена.')

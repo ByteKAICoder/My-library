@@ -62,3 +62,15 @@ def update_read_status(books):
 
     except ValueError:
         print("Ошибка: Введите корректный номер")
+
+
+def show_all_books(books):
+    """Выводим все книги"""
+    if len(books) > 0:
+        for number, book in enumerate(books, 1):
+            print(f'\nКнига - {number}\nНазвание: {book['title']}\n'
+                  f'Автор: {book['author']}\n'
+                  f'Статус: {'прочитана' if book['read'] else 'не прочитана'}\n')
+            print('----------------------------------')
+    else:
+        print('\nСписок книг пуст.')

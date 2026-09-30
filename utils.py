@@ -89,3 +89,23 @@ def add_book(books):
     books.append(new_book)
     save_books(books)
     print(f'\nКнига "{title}" добавлена.')
+
+
+def delete_book(books):
+    """Удаляем книгу"""
+    while True:
+
+        show_all_books(books)
+
+        try:
+            index = int(input('\nВведите номер книги для удаления: '))
+            if 1 <= index <= len(books):
+                del_book = books[index - 1]['title']
+                books.pop(index - 1)
+                save_books(books)
+                print(f'\nКнига "{del_book}" удалена.')
+                break
+            else:
+                print('\nКниги под таким номером не существует.\n')
+        except ValueError:
+            print('\nДанный ввод не является целым числом.\n')

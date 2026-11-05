@@ -1,10 +1,6 @@
 # 📚 My library
 
-## Описание
-
-*My library* - консольное приложение для учёта прочитанных и непрочитанных книг. Интерфейс позволяет добавлять, удалять, отмечать прочитанными/непрочитанными книги и просматривать список книг.
-
-## 🔍 Overview / Обзор проекта
+## 🔍 Overview
 
 | Parameter | Description |
 | :--- | :--- |
@@ -12,3 +8,7 @@
 | **Project goal** | Creating a virtual library|
 | **Project type** | Console Application (CLI) |
 | **Interface** | Command Line (Terminal) |
+
+## Description
+
+*My Library* is a console application for keeping track of books you have read or have yet to read. The interface allows you to add or remove books, mark them as read or unread, and view your list of books.
